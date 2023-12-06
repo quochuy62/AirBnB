@@ -1,11 +1,20 @@
 import React from 'react'
+import * as S from "./style"
+import Logo from "../../assets/icons/logo"
 
-function login() {
+
+
+function Login() {
+ 
+
   return (
-    <div>
-      login
-    </div>
+    <S.Div>
+       <Logo/>
+
+    </S.Div>
+    
+
   )
 }
 
-export default login;
+export default Login;
