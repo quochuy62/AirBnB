@@ -3,8 +3,8 @@ function Logo() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="265.039"
-      height="300"
+      width="8rem"
+      height="8rem"
       viewBox="0 0 265.039 300"
       id="airbnb"
     >
