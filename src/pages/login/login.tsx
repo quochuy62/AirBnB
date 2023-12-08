@@ -44,55 +44,68 @@ function Login() {
           
 
         <S.ColRight span={12}>
+          <div style={{textAlign:'center', marginBottom:'1rem'}}>
           <p style={{
             fontSize: '3rem',
             fontWeight:'700'
           }}>Hello!</p>
           <p>Sign into your account</p>
-          <Form
+
+          </div>
+
+        
+          <S.FormIn
             name="basic"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 16 }}
-            style={{ maxWidth: 600 }}
+            // labelCol={{ span: 10 }}
+            // wrapperCol={{ span: 10 }}
+            // style={{ maxWidth: 500 }}
             initialValues={{ remember: true }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
             autoComplete="off"
           >
             <Form.Item<FieldType>
-              label="Email"
+              // label="Email"
               name="Email"
               rules={[
                 { required: true, message: "Please input your username!" },
               ]}
             >
-              <Input />
+              <Input placeholder="Email" />
             </Form.Item>
 
             <Form.Item<FieldType>
-              label="Password"
+              // label="Password"
               name="password"
               rules={[
                 { required: true, message: "Please input your password!" },
               ]}
             >
-              <Input.Password />
+              <Input.Password placeholder="Password" />
             </Form.Item>
 
             <Form.Item<FieldType>
               name="remember"
               valuePropName="checked"
-              wrapperCol={{ offset: 8, span: 16 }}
+              wrapperCol={{ offset: 0, span: 16 }}
             >
               <Checkbox>Remember me</Checkbox>
             </Form.Item>
 
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Button type="primary" htmlType="submit">
-                Submit
-              </Button>
+            <Form.Item wrapperCol={{ offset: 4, span: 16 }} style={{textAlign:'center', marginBottom:'1rem'}}>
+              <S.ButtonIn htmlType="submit">
+                SIGN IN 
+              </S.ButtonIn>            
             </Form.Item>
-          </Form>
+            <div
+              style={{
+                display:'flex',
+                justifyContent:'center'}}>
+              <p>Don't have an account?</p>
+              <a>Create</a>
+
+              </div>
+          </S.FormIn>
         </S.ColRight>
       </Row>
     </S.Div>

@@ -33,8 +33,21 @@ margin:2rem 10rem;
 `
 
 export const ColRight = styled(Col)`
-display: flex;
-justify-content: center;
-text-align: center;
-padding: 6rem 0;
+/* text-align: center; */
+padding: 3rem;
+
+`
+export const ButtonIn = styled.button`
+width: 20rem;
+height: 3rem;
+border-radius: 1rem;
+border: none;
+color: white;
+font-weight: 600;
+background-image: linear-gradient(to top, #fa709a 0%, #fee140 100%);
+
+`
+
+export const FormIn = styled(Form)`
+
 `
