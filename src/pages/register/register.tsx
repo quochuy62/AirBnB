@@ -67,7 +67,7 @@ function Register() {
               // label="Email"
               name="Email"
               rules={[
-                { required: true, message: "Please input your username!" },
+                { required: true, message: "Please input your email!" },
               ]}
             >
               <Input placeholder="Email" />
@@ -83,13 +83,39 @@ function Register() {
               <Input.Password placeholder="Password" />
             </Form.Item>
 
+            
             <Form.Item<FieldType>
-              name="remember"
-              valuePropName="checked"
-              wrapperCol={{ offset: 0, span: 16 }}
+              // label="Password"
+              name="password"
+              rules={[
+                { required: true, message: "Please input your password!" },
+              ]}
             >
-              <Checkbox>Remember me</Checkbox>
+              <Input.Password placeholder="Nhập lại password" />
             </Form.Item>
+
+            
+            <Form.Item<FieldType>
+              // label="Password"
+              name="name"
+              rules={[
+                { required: true, message: "Please input your name" },
+              ]}
+            >
+              <Input placeholder="Họ tên" />
+            </Form.Item>
+
+            
+            <Form.Item<FieldType>
+              // label="Password"
+              name="sđt"
+              rules={[
+                { required: true, message: "Please input your phone number" },
+              ]}
+            >
+              <Input placeholder="Số điện thoại" />
+            </Form.Item>
+
 
             <Form.Item wrapperCol={{ offset: 4, span: 16 }} style={{textAlign:'center', marginBottom:'1rem'}}>
               <S.ButtonIn htmlType="submit">
@@ -100,8 +126,8 @@ function Register() {
               style={{
                 display:'flex',
                 justifyContent:'center'}}>
-              <p>Create account</p>
-              <a>Create</a>
+              <p>Already have an account?</p>
+              <a>Sign In</a>
 
               </div>
           </S.FormIn>

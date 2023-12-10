@@ -23,16 +23,20 @@
 *::after,
 *::before {
   box-sizing: border-box;
+
 }
 
 html {
   font-size: 62.5%;
+  
 }
 body {
   font-size: 1.6rem;
   font-family: Oswald;
   font-weight: 400;
-  margin: 0;
+  margin: auto;
+  background-color: black;
+
 }
 img {
   width: 100%;

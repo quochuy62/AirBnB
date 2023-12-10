@@ -1,0 +1,17 @@
+
+.nav{
+/* background-color: rgba(20, 18, 18, 0.993); */
+display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  overflow: hidden;
+  background: black;
+  /* transition: height 0.2s linear; */
+  cursor: pointer;
+  padding: 8px 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
