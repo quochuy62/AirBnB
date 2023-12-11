@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { RouterProvider } from 'react-router'
+import { RouterProvider } from 'react-router-dom'
 import { GlobalStyle } from './conponents/global-style/global-style'
-import  Header  from '../src/templates/home/header/header'
+import {router} from "./route"
 
 
 function App() {
 
   return (
     <GlobalStyle>
-     <Header/>
+     <RouterProvider router={router}/>
     </GlobalStyle>
   )
 }

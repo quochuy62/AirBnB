@@ -6,15 +6,12 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 function Header() {
   return (
     <>
-    <header>
-        <div className={css.nav}>
+    <header className={css.header}>
+        <div>
         <LogoHome/>
         </div>
-        <div style={{backgroundColor:'red', height:'100rem'}}>
-
-
-        </div>
-    
+         <nav className={css.nav}>
+         </nav>
     </header>
     </>
   )
