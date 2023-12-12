@@ -7,7 +7,6 @@ function HomeTemplate(props: PropsWithChildren) {
   return (
     <div>
       <Header/>
-
       <Suspense fallback={<p>"Loading...."</p>}>
         <Outlet />
       </Suspense>

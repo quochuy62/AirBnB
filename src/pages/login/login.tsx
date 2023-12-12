@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, Modal } from "antd";
 import { Col, Row } from "antd";
 import * as S from "./style";
 import Logo from "../../assets/icons/logo";
@@ -41,8 +41,6 @@ function Login() {
          </S.ColLeft>
 
          
-          
-
         <S.ColRight span={12}>
           <div style={{textAlign:'center', marginBottom:'1rem'}}>
           <p style={{

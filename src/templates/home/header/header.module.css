@@ -2,7 +2,7 @@
 .header{
 display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
   width: 100%;
   overflow: hidden;
   background: black;
@@ -14,7 +14,11 @@ display: flex;
   left: 0;
   opacity: 0.8;
 }
+.navi{
+  /* padding-right: 50rem; */
+}
 
 .nav{
   color: #fff;
+  padding: 0 2rem;
 }
