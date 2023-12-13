@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown, Space, Modal } from "antd";
-import * as S from "./drop";
 import SignIn from "../../../../pages/login/login"
+import Register from "../../../../pages/register/register";
+import "./drop.css";
 
 
 // const Drop: React.FC = () => (
@@ -39,8 +40,11 @@ function Drop() {
           </Space>
         </a>
       </Dropdown>
-      <Modal className="modal" footer={null} open={isModalOpen} onCancel={handleCancel}>
+      <Modal  className="modal" width={800}  footer={null} open={isModalOpen}  onCancel={handleCancel}>
         <SignIn/>
+      </Modal>
+      <Modal  className="modal" width={800}  footer={null} open={isModalOpen} onCancel={handleCancel}>
+        <Register/>
       </Modal>
     </>
   );
