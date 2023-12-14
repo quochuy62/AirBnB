@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Checkbox, Form, Input, Modal } from "antd";
 import { Col, Row } from "antd";
 import * as S from "./style";
 import Logo from "../../assets/icons/logo";
+import type { MenuProps } from "antd";
+import Register from "../register/register";
 
 function Login() {
   const onFinish = (values: any) => {
@@ -18,40 +20,48 @@ function Login() {
     password?: string;
     remember?: string;
   };
+ 
+  const [modal2Open, setModal2Open] = useState(false);
+  const [modal1Open, setModal1Open] = useState(false);
 
   return (
-    <S.Div>
+    <S.Div >
       <Row>
         <S.ColLeft span={12}>
           <S.DivContent>
-          <p style={{
-            fontSize: '3rem',
-            fontWeight:'700'
-          }}>
-            Welcome to
+            <p
+              style={{
+                fontSize: "3rem",
+                fontWeight: "700",
+              }}
+            >
+              Welcome to
             </p>
 
+            <S.Logo>
+              <Logo />
+            </S.Logo>
 
-          <S.Logo>
-          <Logo/>
-          </S.Logo>
-
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, minima!</p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde,
+              minima!
+            </p>
           </S.DivContent>
-         </S.ColLeft>
+        </S.ColLeft>
 
-         
         <S.ColRight span={12}>
-          <div style={{textAlign:'center', marginBottom:'1rem'}}>
-          <p style={{
-            fontSize: '3rem',
-            fontWeight:'700'
-          }}>Hello!</p>
-          <p>Sign into your account</p>
-
+          <div style={{ textAlign: "center", marginBottom: "1rem" }}>
+            <p
+              style={{
+                fontSize: "3rem",
+                fontWeight: "700",
+              }}
+            >
+              Hello!
+            </p>
+            <p>Sign into your account</p>
           </div>
 
-        
           <S.FormIn
             name="basic"
             // labelCol={{ span: 10 }}
@@ -90,19 +100,30 @@ function Login() {
               <Checkbox>Remember me</Checkbox>
             </Form.Item>
 
-            <Form.Item wrapperCol={{ offset: 4, span: 16 }} style={{textAlign:'center', marginBottom:'1rem'}}>
-              <S.ButtonIn htmlType="submit">
-                SIGN IN 
-              </S.ButtonIn>            
+            <Form.Item
+              wrapperCol={{ offset: 4, span: 16 }}
+              style={{ textAlign: "center", marginBottom: "1rem" }}
+            >
+              <S.ButtonIn htmlType="submit">SIGN IN</S.ButtonIn>
             </Form.Item>
             <div
               style={{
-                display:'flex',
-                justifyContent:'center'}}>
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <p>Don't have an account?</p>
-              <a>Create</a>
-
-              </div>
+              <a onClick={() => setModal2Open(true)}>Create</a>
+              <Modal
+                className="modal"
+                width={800}
+                footer={null}
+                open={modal2Open}
+                onCancel={() => setModal2Open(false)}
+              >
+                <Register />
+              </Modal>
+            </div>
           </S.FormIn>
         </S.ColRight>
       </Row>

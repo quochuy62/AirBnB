@@ -2,31 +2,24 @@ import React, { useState } from "react";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown, Space, Modal } from "antd";
-import SignIn from "../../../../pages/login/login"
+import SignIn from "../../../../pages/login/login";
 import Register from "../../../../pages/register/register";
 import "./drop.css";
 
 
 // const Drop: React.FC = () => (
 function Drop() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
+  const [modal1Open, setModal1Open] = useState(false);
+  const [modal2Open, setModal2Open] = useState(false);
 
   const items: MenuProps["items"] = [
     {
       key: "1",
-      label: <a onClick={showModal}>Sign In</a>,
+      label: <a onClick={() => setModal1Open(true)}>Sign In</a>,
     },
     {
       key: "2",
-      label: <a onClick={showModal}>Sign Up</a>,
+      label: <a onClick={() => setModal2Open(true)}>Sign Up</a>,
     },
   ];
 
@@ -40,10 +33,10 @@ function Drop() {
           </Space>
         </a>
       </Dropdown>
-      <Modal  className="modal" width={800}  footer={null} open={isModalOpen}  onCancel={handleCancel}>
+      <Modal className="modal" width={800}  footer={null}  open={modal1Open}  onCancel={() => setModal1Open(false)}>
         <SignIn/>
       </Modal>
-      <Modal  className="modal" width={800}  footer={null} open={isModalOpen} onCancel={handleCancel}>
+      <Modal  className="modal" width={800}  footer={null}  open={modal2Open} onCancel={() => setModal2Open(false)}>
         <Register/>
       </Modal>
     </>

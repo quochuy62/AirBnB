@@ -7,7 +7,7 @@ export const Div = styled.div`
 border-radius: 3rem;
 overflow: hidden;
 box-shadow: 0rem 1rem 4rem 0rem #fee140;
-margin: 6rem 20rem 0 20rem;
+/* margin: 6rem 20rem 0 20rem; */
 `
 export const DivContent = styled.div`
 width: 30rem;
