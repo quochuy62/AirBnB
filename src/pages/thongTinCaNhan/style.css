@@ -1,0 +1,30 @@
+.div{
+    margin: 9rem;
+}
+.left{
+    font-family: oswald;
+    padding-left: 1rem;
+    line-height: 3rem;
+    font-size: 1.6rem;
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+}
+.img{
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+}
+.button{
+    background-color: #000;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    border: solid 1px;
+    margin-top: 1rem;
+}
+.right{
+    font-family: oswald;
+}
+

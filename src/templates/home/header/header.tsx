@@ -14,7 +14,7 @@ function Header() {
         <LogoHome/>
         </div>
          <nav className={css.navi} >
-          <NavLink className={css.nav} to="/">Nơi ở</NavLink>
+          <NavLink className={css.nav} to="profile">Nơi ở</NavLink>
           <NavLink className={css.nav} to="/">Trải nghiệm</NavLink>
           <NavLink className={css.nav} to="/">Trải nghiệm trực tuyến</NavLink>     
          </nav>
