@@ -6,7 +6,12 @@ import Logo from "../../assets/icons/logo";
 import type { MenuProps } from "antd";
 import Register from "../register/register";
 
-function Login() {
+type LoginProps = {
+  setModal1Open: any,
+  setModal2Open: any,
+}
+function Login(props:LoginProps) {
+  console.log(props)
   const onFinish = (values: any) => {
     console.log("Success:", values);
   };
@@ -21,9 +26,7 @@ function Login() {
     remember?: string;
   };
  
-  const [modal2Open, setModal2Open] = useState(false);
-  const [modal1Open, setModal1Open] = useState(false);
-
+  
   return (
     <S.Div >
       <Row>
@@ -113,16 +116,11 @@ function Login() {
               }}
             >
               <p>Don't have an account?</p>
-              <a onClick={() => setModal2Open(true)}>Create</a>
-              <Modal
-                className="modal"
-                width={800}
-                footer={null}
-                open={modal2Open}
-                onCancel={() => setModal2Open(false)}
-              >
-                <Register />
-              </Modal>
+              <a onClick={() => {
+                props.setModal1Open(false)
+                props.setModal2Open(true)
+              }}>Create</a>
+             
             </div>
           </S.FormIn>
         </S.ColRight>

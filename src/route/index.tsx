@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 const Home = lazy(() => import("../pages/home/home"));
-const ThongTin = lazy (() => import ("../pages/thongTinCaNhan/profile")) ;
+const ThongTin = lazy (() => import ("../pages/profile/profile")) ;
 import HomeTemplate from "../templates/home/homeTemplate";
 
 export const router = createBrowserRouter([

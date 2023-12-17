@@ -34,7 +34,9 @@ function Drop() {
         </a>
       </Dropdown>
       <Modal className="modal" width={800}  footer={null}  open={modal1Open}  onCancel={() => setModal1Open(false)}>
-        <SignIn/>
+        <SignIn setModal1Open = {setModal1Open}
+        setModal2Open = {setModal2Open}
+          />
       </Modal>
       <Modal  className="modal" width={800}  footer={null}  open={modal2Open} onCancel={() => setModal2Open(false)}>
         <Register/>
