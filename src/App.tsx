@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { RouterProvider } from 'react-router-dom'
-import { GlobalStyle } from './conponents/global-style/global-style'
+import { GlobalStyle } from './components/global-style/global-style'
 import {router} from "./route"
 
 

@@ -5,6 +5,7 @@ import { Dropdown, Space, Modal } from "antd";
 import SignIn from "../../../../pages/login/login";
 import Register from "../../../../pages/register/register";
 import "./drop.css";
+import { NavLink } from "react-router-dom";
 
 
 // const Drop: React.FC = () => (
@@ -20,6 +21,10 @@ function Drop() {
     {
       key: "2",
       label: <a onClick={() => setModal2Open(true)}>Sign Up</a>,
+    },
+    {
+      key: "3",
+      label: <NavLink to="/">Cho thuê nhà</NavLink>,
     },
   ];
 
