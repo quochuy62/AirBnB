@@ -1,5 +1,8 @@
 .div{
-    margin: 9rem;
+    padding: 9rem;
+    background-color: #131212;
+    color: #fff;
+    
 }
 .left{
     font-family: oswald;
@@ -24,6 +27,9 @@
     padding: 1rem 2rem;
     border: solid 1px;
     margin: 1rem 0;
+}
+.button:hover{
+    background-color: rgba(156, 89, 111, 0.596);
 }
 .right{
     font-family: oswald;

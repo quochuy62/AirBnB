@@ -24,7 +24,11 @@ function Drop() {
     },
     {
       key: "3",
-      label: <NavLink to="/">Cho thuê nhà</NavLink>,
+      label: <NavLink to="/">user</NavLink>,
+    },
+    {
+      key: "4",
+      label: <NavLink to="quanlynguoidung">Admin</NavLink>,
     },
   ];
 
