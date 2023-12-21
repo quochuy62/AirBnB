@@ -1,8 +1,8 @@
-.div{
+.divProfile{
     padding: 9rem;
     background-color: #131212;
     color: #fff;
-    
+    height:100vh;
 }
 .left{
     font-family: oswald;
@@ -46,15 +46,19 @@
 .room{
     border-bottom: 1px solid #444343;
     padding-bottom: 1rem;
+    
 }
 
 .imgRoom{
- width: 20rem;
- height: 10rem;
+ width: 30rem;
+ height: 20rem;
  border-radius: 2rem;
 
 }
 .inRoom{
 padding-left: 2rem;
-}
 
+}
+.gia{
+    text-align: end;
+}

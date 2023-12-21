@@ -1,96 +1,78 @@
-import React from 'react'
-import { Input, Space } from 'antd';
-import type { SearchProps } from '../Search';
-import { Table, Tag } from 'antd';
-import  "./admin.css"
-
+import React from "react";
+import { Input, Space } from "antd";
+import type { SearchProps } from "../Search";
+import { Table, Tag } from "antd";
+import "./admin.css";
 
 const { Search } = Input;
-const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
+const onSearch: SearchProps["onSearch"] = (value, _e, info) =>
+  console.log(info?.source, value);
 
 const { Column, ColumnGroup } = Table;
 interface DataType {
   key: React.Key;
-  firstName: string;
-  lastName: string;
-  age: number;
-  address: string;
-  tags: string[];
+  maPhong: number;
+  tenPhong: string;
+  hinhAnh: string;
+  viTri: string;
+  guesMax: number;
+  action: any;
 }
 
 const data: DataType[] = [
   {
-    key: '1',
-    firstName: 'John',
-    lastName: 'Brown',
+    key: "1",
+    firstName: "John",
+    lastName: "Brown",
     age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    firstName: 'Jim',
-    lastName: 'Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    firstName: 'Joe',
-    lastName: 'Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
+    address: "New York No. 1 Lake Park",
+    tags: ["nice", "developer"],
   },
 ];
 
 function QuanLyNguoiDung() {
   return (
-    <div>
-    <Space className="tim" direction="vertical">
-    <Search  placeholder="Nhập vào tên phòng" onSearch={onSearch} style={{ width: 200 }} />
-    </Space>
+    <div className="divAdmin">
+      <Space className="tim" direction="vertical">
+        <Search
+          placeholder="Nhập vào tên phòng"
+          onSearch={onSearch}
+          // style={{ width: 500 }}
+        />
+      </Space>
 
+      <Table dataSource={data} pagination={false}>
+        <Column title="Mã phòng" dataIndex="maPhong" key="maPhong" />
+        <Column title="Tên phòng" dataIndex="tenPhong" key="tenPhong" />
+        <Column className="hinhAnh"
+          title="Hình ảnh"
+          dataIndex="hinhAnh"
+          key="hinhAnh"
+          render={(_: any, record: DataType) => (
+            <Space size="middle">
+              <a>Chỉnh sửa</a>
 
-    <Table dataSource={data}>
-    <ColumnGroup title="Name">
-      <Column title="First Name" dataIndex="firstName" key="firstName" />
-      <Column title="Last Name" dataIndex="lastName" key="lastName" />
-    </ColumnGroup>
-    <Column title="Age" dataIndex="age" key="age" />
-    <Column title="Address" dataIndex="address" key="address" />
-    <Column
-      title="Tags"
-      dataIndex="tags"
-      key="tags"
-      render={(tags: string[]) => (
-        <>
-          {tags.map((tag) => (
-            <Tag color="blue" key={tag}>
-              {tag}
-            </Tag>
-          ))}
-        </>
-      )}
-    />
-    <Column
-      title="Action"
-      key="action"
-      render={(_: any, record: DataType) => (
-        <Space size="middle">
-          <a>Xem thông tin chi tiết</a>
-          <a>Sửa</a>
-          <a>Xóa</a>
-        </Space>
-      )}
-    />
-  </Table>
-    
-
-
+            </Space>
+          )}
+        />
+        <Column title="Vị trí" dataIndex="viTri" key="viTri" />
+        <Column title="GuesMax" dataIndex="guesMax" key="guesMax" />
+        <Column
+        className="action"
+          title="Action"
+          key="action"
+          render={(_: any, record: DataType) => (
+            <Space size="middle">
+              <a>Xem thông tin chi tiết</a>
+              <a>Sửa</a>
+              <a>Xóa</a>
+            </Space>
+          )}
+        />
+      </Table>
     </div>
-  )
+   
+  );
 }
 
 export default QuanLyNguoiDung;

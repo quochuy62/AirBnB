@@ -1,3 +1,15 @@
-.tim{
-    margin-top: 2rem;
+.divAdmin{
+    width: 75%;
+    margin: auto;
+}
+.tim {
+    margin: 2rem 0;
+    width: 100%;
+    align-items: end;
+}
+.hinhAnh{
+    width: 20%;
+}
+.action{
+    width: 25%;
 }
