@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown, Space, Modal } from "antd";
-import SignIn from "../../../../pages/login/login";
+import LogIn from "../../../../pages/login/login";
 import Register from "../../../../pages/register/register";
 import "./drop.css";
 import { NavLink } from "react-router-dom";
@@ -43,12 +43,13 @@ function Drop() {
         </a>
       </Dropdown>
       <Modal className="modal" width={800}  footer={null}  open={modal1Open}  onCancel={() => setModal1Open(false)}>
-        <SignIn setModal1Open = {setModal1Open}
+        <LogIn setModal1Open = {setModal1Open}
         setModal2Open = {setModal2Open}
           />
       </Modal>
       <Modal  className="modal" width={800}  footer={null}  open={modal2Open} onCancel={() => setModal2Open(false)}>
-        <Register/>
+        <Register setModal1Open = {setModal1Open}
+        setModal2Open = {setModal2Open}/>
       </Modal>
     </>
   );

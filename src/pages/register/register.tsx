@@ -3,8 +3,53 @@ import { Button, Checkbox, Form, Input } from "antd";
 import { Col, Row } from "antd";
 import * as S from "./style";
 import Logo from "../../assets/icons/logo";
+import { useState } from "react";
+import { useFormik } from "formik";
 
-function Register() {
+const validate = (values) => {
+  type A = typeof values;
+  type B = keyof A;
+
+  const errors: Record<B,string> = {};
+  if (values.email.trim().length === 0) {
+    errors.email = "Email Không Được Bỏ Trống";
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = "Invalid email address";
+  }
+
+  if (values.phone.trim().length === 0) {
+    errors.phone = "Phone Không Được Bỏ Trống";
+  } else if (!(values.phone.length <= 10 && values.phone.length >= 5)) {
+    errors.phone = "Phone Không đúng định dạng";
+  }
+
+  if (!(values.name.length <= 50 && values.name.length >= 10)) {
+    errors.name = "Tên Không Được Bỏ Trống";
+  }
+
+  return errors;
+
+}
+
+import * as Y from "yup";
+import { useNavigate } from "react-router-dom";
+const validationSchema = Y.object({
+  email: Y.string().email("Email không hợp lệ.").required(),
+  name: Y.string()
+    .min(10, "Không được phép nhỏ hơn 10")
+    .max(30, "Không được phép lớn hơn 30")
+    .required(),
+  passWord: Y.string().min(6).max(50).required(),
+  confirmPassWord: Y.string().oneOf([Y.ref("passWord"), null]),
+});
+
+
+type RegisterProps = {
+  setModal1Open: any,
+  setModal2Open: any,
+}
+
+function Register(props: RegisterProps) {
   const onFinish = (values: any) => {
     console.log("Success:", values);
   };
@@ -18,6 +63,26 @@ function Register() {
     password?: string;
     remember?: string;
   };
+
+  const navigate = useNavigate();
+  const formik = useFormik({
+    initialValues:{
+      email:"",
+      passWord:"",
+      confirmPassword:"",
+      name:"",
+      phone:"",
+    },
+    validationSchema,
+
+    onSubmit:(values) =>{
+      const payload ={
+        email: values.email,
+        password: values.passWord,
+        
+      }
+    }
+  })
 
   return (
     <S.Div>
@@ -127,7 +192,10 @@ function Register() {
                 display:'flex',
                 justifyContent:'center'}}>
               <p>Already have an account?</p>
-              <a>Sign In</a>
+              <a onClick={() => {
+                props.setModal1Open(true)
+                props.setModal2Open(false)}}
+              >Sign In</a>
 
               </div>
           </S.FormIn>
