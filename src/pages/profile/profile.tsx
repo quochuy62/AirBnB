@@ -1,9 +1,10 @@
 import React from "react";
 import { Col, Row } from "antd";
 import "./style.css";
+import CheckIcon from "../../assets/icons/check-icon";
 function Profile() {
   return (
-    <Row className="div">
+    <Row className="divProfile">
       <Col className="left" span={8}>
         <div className="avatar">
           <img className="img" src="https://i.pravatar.cc?img=2" />
@@ -14,6 +15,7 @@ function Profile() {
         
 
         <div style={{borderBottom:'solid 1px #444343', margin:'2rem'}}>
+         <CheckIcon/>
         <h3>Xác minh danh tính</h3>
         <p>Xác thực danh tính của bạn với huy hiệu xác minh danh tính</p>
         <button className="button">Nhận huy hiệu</button>
@@ -44,6 +46,9 @@ function Profile() {
 
         <Col span={12} className="inRoom">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad animi tempora quis provident. Placeat consequuntur laboriosam natus aliquid voluptas vitae! Quae debitis veniam aut dolore aliquam vitae, animi maxime repellat.
+        <h3 className="gia">
+          giá/tháng
+        </h3>
         </Col>
 
        </Row>

@@ -5,6 +5,8 @@ import * as S from "./style";
 import Logo from "../../assets/icons/logo";
 import type { MenuProps } from "antd";
 import Register from "../register/register";
+import { useFormik } from "formik";
+import * as Y from "yup";
 
 type LoginProps = {
   setModal1Open: any,

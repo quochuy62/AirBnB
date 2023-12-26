@@ -1,0 +1,21 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  background: black;
+  /* transition: height 0.2s linear; */
+  cursor: pointer;
+  padding: 8px 12px;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  color: #fff;
+}
+.navAdmin {
+  text-decoration: underline;
+  padding: 0 1rem;
+  color: #000;
+}
